@@ -16,5 +16,5 @@ I dag gik vi igang med et projekt omkring hvordan man bruger klasser i c++, før
 
 Der blev først lavet en klass hvor de forskellige metoder og medlemvariabler blev sat op. For at gemme dataen blev der lavet en struct ved navn Character, hvori der blev gemt navn, xp og level. I party klassen blev der lavet en vector til at holde charactersne. 
 
-Inden hver funktion blev lavet, så blev der skrevet nogle få kommentare til hvordan funktionen skulle forløbe, herefter blev implementeringen lavet. Der blev desvære taget brug af en goto i funktionen read_xp_level. Til sorteringen blev den indbyggede std::sort brugt. 
+Inden hver funktion blev lavet, så blev der skrevet nogle få kommentare til hvordan funktionen skulle forløbe, herefter blev implementeringen lavet. Der blev desvære taget brug af en goto i funktionen read_xp_level. Til sorteringen blev den indbyggede std::sort brugt.  Der blev også brugt Boost, til nogle funktioner f.eks. til at konverterer strenge til små bogstaver og til at trimme strenge.
 

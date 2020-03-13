@@ -4,4 +4,7 @@ project(RPG_Classes)
 
 set (CMAKE_CXX_STANDARD 11)
 
-add_subdirectory(Opgaver)
+add_subdirectory(Opgave_1)
+
+add_subdirectory(Opgave_2-4)
+
