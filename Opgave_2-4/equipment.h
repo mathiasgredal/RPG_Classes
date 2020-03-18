@@ -4,6 +4,7 @@
 #include <boost/algorithm/string.hpp>
 #include <iostream>
 #include <string>
+#include <vector>
 
 enum EquipmentType { Weapon,
     Ammo,
@@ -26,11 +27,17 @@ public:
     std::string getName() const;
     float getPrice() const;
     EquipmentType getType() const;
+    std::string getTypeString() const;
+
     float getWeight() const;
     std::string getDescription() const;
     bool getReady() const;
 
     void changeEquipmentReadyState();
+    void print() const;
 };
+
+bool operator==(const Equipment& lhs, const Equipment& rhs);
+std::vector<Equipment> testEquipment();
 
 #endif // EQUIPMENT_H
