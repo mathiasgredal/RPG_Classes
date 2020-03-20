@@ -8,3 +8,4 @@ add_subdirectory(Opgave_1)
 
 add_subdirectory(Opgave_2-4)
 
+add_subdirectory(Opgave_5)

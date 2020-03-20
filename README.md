@@ -26,3 +26,57 @@ For at teste programmet blev der lavet en simpel while loop, hvor man kan indtas
 
 
 
+### 2020/03/20
+
+I dag blev opgave 5 påbegyndt og der blev implementeret metoder til at konstruere en ``Money `` klasse samt at få fat i antallet at penge i både bronze, sølv og guld form. Der blev også lavet metoder til at tilføje penge samt at printe antallet at penge ud i en form hvor tallene er mindst muligt, altså der vil aldrig blive printet mere end 100 bronze eller sølvstykker ud. I starten af dagen blev der spildt noget tid i forsøg på at bruge GMP biblioteket for at få adgang til multipræcisionstal i c++, dog blev det droppet da programmet ikke ville kompilere. Der blev også kigget på programmeringsparadigmer.
+
+#### Øvelse procedural programmering
+
+- Undersøg begræbet modulær programmering og sammenlign med C++
+  - Modulær programmering er en måde at opdele programmet i små udskiftelige moduler som står for en meget specifik del af programmet og fungerer uafhængigt fra resten af programmet. Dette er godt fordi at programstrukturen bliver mere overskuelig og man kan nemmere undgå fejl, samtidig er det også nemmere at arbejde flere da de forskellige moduler skal kunne fungere uafhængigt med et veldefineret interface. Man kan gøre brug af dette paradigme i C++ ved hjælp af klasser og namespaces.
+- Undersøg begrebet *"Side effect"* og sammenlign det med C++
+  - En side effect er når en funktion eller metode ændrer en ekstern state. Dette er ikke godt at have for det reducerer hvor genbrugelig koden er og det gør også sværere at forstå hvad en funktion helt præcis gør. I c++ kan man sætte en funktion som const, og så ved man at der ikke bliver modificeret noget data når funktionen bliver kaldet.
+
+#### Øvelse objekt orienteret programmering
+
+- Forskelle mellem procedural og objekt orienteret programmering
+  - Procedural programmering bruger funktioner og moduler hvor objekt orienteret programmering bruger objekter og metoder
+- Fordele ved objekt orienteret programmering
+  - Man er mere skalerbart og kan være nemmere at dele op i moduler og for at udvikle videre behøver man ikke at kende hele programstrukturen. Man kan også nemmere arbejde parallelt
+
+
+
+#### Eksempel på objekt orienteret programmering:
+
+```c++
+struct Customer {
+    boost::uuids::uuid id;
+    bool allowed;
+};
+
+bool operator==(const Customer& lhs, const Customer& rhs);
+
+// Der er en klasse som hedder Shop og holder styr på hvilket equipment der er i butikken
+// Shoppen behøver ikke at bekymre sig om implementeringen af equipment.
+class Shop {
+    std::vector<Equipment> m_items;
+    std::vector<Customer> m_customers;
+
+public:
+    Shop();
+
+    void AddEquipment(const Equipment& equipment);
+    void AddCustomer(const Character& customer, bool allowed);
+
+    void BuyEquipment(Character& character, uint equipmentNr);
+
+  	// Når print er erklæreret konst så ved man at den ikke har nogle side-effects
+    void print() const;
+
+    std::vector<Equipment> items() const;
+    std::vector<Customer> customers() const;
+};
+```
+
+
+
