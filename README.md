@@ -96,10 +96,10 @@ I dag arbejdede vi med klassediagrammer. Jeg brugte starten af timen på at afsl
 
 ##### Character
 
-<img src="class_character_graph.png" alt="class_character__coll__graph" style="zoom: 67%;" />
+![](class_character_graph.png)
 
 Her ses et klassediagram over Character klassen, som er den grå boks i bunden. Øverst ses medlemsvariablerne og nederst ses metoderne. I denne klasse er alle medlemsvariablerne private og alle metoderne offentligte, hvilket ses ved om der er enten et plus eller et minus som henholdsvis står for offentlig eller privat. Man kunne dog også have haft private metoder, men de metoder som man kunne have lavet private, blev omdannet til hjælpefunktioner som ligger uden for klassen. Ud over de variabler der er inde i den grå boks, så er der også nogle pile fra de andre bokse. Her ses der en equipment vector ved navn m_equipment, der bliver også brugt en streng fra stl. 
 
 ##### Shop
 
-<img src="class_shop_graph.png" alt="class_shop__coll__graph" style="zoom: 67%;" />
+![](class_shop_graph.png)
