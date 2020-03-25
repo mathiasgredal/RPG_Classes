@@ -29,6 +29,23 @@ Money::Money(long bronzePieces, double silverPieces, double goldPieces)
     m_bronzePieces = bronzePieces + fromSilver(silverPieces) + fromGold(goldPieces);
 }
 
+///
+/// \brief This creates a money class from a string, typically from the print function
+/// \param moneyString just the string eg. 10gp 46sp 3cp
+///
+Money::Money(std::string moneyString)
+{
+    // Split string by type
+    std::string goldString = moneyString.substr(0, moneyString.find("gp"));
+    std::string silverString = moneyString.substr(moneyString.find("gp ") + 3, moneyString.find("sp"));
+    std::string bronzeString = moneyString.substr(moneyString.find("sp ") + 3, moneyString.find("cp") - 2);
+
+    *this = Money(stoi(bronzeString), stof(silverString), stof(goldString));
+
+    std::cout << moneyString << " = ";
+    print();
+}
+
 long Money::getBronzePieces() const
 {
     return m_bronzePieces;
@@ -58,6 +75,21 @@ void Money::addGoldPieces(double goldPieces)
 {
 
     m_bronzePieces += fromGold(goldPieces);
+}
+
+void Money::subtractBronzePieces(long bronzePieces)
+{
+    m_bronzePieces -= bronzePieces;
+}
+
+void Money::subtractSilverPieces(double silverPieces)
+{
+    m_bronzePieces -= fromSilver(silverPieces);
+}
+
+void Money::subtractGoldPieces(double goldPieces)
+{
+    m_bronzePieces -= fromGold(goldPieces);
 }
 
 void Money::print()

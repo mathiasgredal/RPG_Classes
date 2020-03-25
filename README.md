@@ -1,6 +1,6 @@
 # RPG Classes #
 
-Dette repository vil blive brugt til at lærer hvordan man bruger klasser i C++.
+Dette repository vil blive brugt til at lære hvordan man bruger klasser i C++.
 
 
 
@@ -59,10 +59,12 @@ bool operator==(const Customer& lhs, const Customer& rhs);
 // Der er en klasse som hedder Shop og holder styr på hvilket equipment der er i butikken
 // Shoppen behøver ikke at bekymre sig om implementeringen af equipment.
 class Shop {
+    // en klasses variabler er som udgangspunkt private, derfor er følgende medlemsvariabler private og kan kun blive modificeret af klassens metoder.
     std::vector<Equipment> m_items;
     std::vector<Customer> m_customers;
 
 public:
+    // Her er konstruktøren til klassen, og står for at danne instanser af denne klasse. 
     Shop();
 
     void AddEquipment(const Equipment& equipment);
@@ -80,3 +82,24 @@ public:
 
 
 
+
+
+### 2020/03/25
+
+I dag arbejdede vi med klassediagrammer. Jeg brugte starten af timen på at afslutte opgave fra sidste gang og tilføjede lidt kommentare til eksemplet og lavede en snippet på bitbucket. Herefter valgte jeg at lave et klassediagram til opgave 2-4 med doxygen. Jeg brugte den manuelle metode til at konfigurere doxygen, dog genererede den ikke diagrammerne efter at have fulgt guiden på bitbucket, da jeg glemte at slå HAVE_DOT til. Jeg gik så igang med at afslutte opgave 5, ved at implementere en funktion til at trække penge ud og til at konstruere et objekt ud fra en streng.
+
+
+
+
+
+#### Klassediagram til opgave 2-4
+
+##### Character
+
+<img src="class_character_graph.png" alt="class_character__coll__graph" style="zoom: 67%;" />
+
+Her ses et klassediagram over Character klassen, som er den grå boks i bunden. Øverst ses medlemsvariablerne og nederst ses metoderne. I denne klasse er alle medlemsvariablerne private og alle metoderne offentligte, hvilket ses ved om der er enten et plus eller et minus som henholdsvis står for offentlig eller privat. Man kunne dog også have haft private metoder, men de metoder som man kunne have lavet private, blev omdannet til hjælpefunktioner som ligger uden for klassen. Ud over de variabler der er inde i den grå boks, så er der også nogle pile fra de andre bokse. Her ses der en equipment vector ved navn m_equipment, der bliver også brugt en streng fra stl. 
+
+##### Shop
+
+<img src="class_shop_graph.png" alt="class_shop__coll__graph" style="zoom: 67%;" />

@@ -11,7 +11,11 @@ class Money {
 
 public:
     Money(long bronzePieces, double silverPieces = 0, double goldPieces = 0);
+    Money(std::string moneyString);
 
+    void print();
+
+    // Det virker som meget kodedublikering at have alle disse funktioner som næsten gør det samme,
     long getBronzePieces() const;
     double getSilverPieces() const;
     double getGoldPieces() const;
@@ -19,7 +23,10 @@ public:
     void addSilverPieces(double silverPieces);
     void addBronzePieces(long bronzePieces);
     void addGoldPieces(double goldPieces);
-    void print();
+
+    void subtractBronzePieces(long bronzePieces);
+    void subtractSilverPieces(double silverPieces);
+    void subtractGoldPieces(double goldPieces);
 };
 
 #endif // MONEY_H
