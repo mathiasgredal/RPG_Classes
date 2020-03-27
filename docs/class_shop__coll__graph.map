@@ -1,0 +1,10 @@
+<map id="Shop" name="Shop">
+<area shape="rect" id="node1" title=" " alt="" coords="118,865,246,1019"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,731,169,804"/>
+<area shape="rect" id="node3" href="$struct_customer.html" title=" " alt="" coords="48,516,127,603"/>
+<area shape="rect" id="node4" title=" " alt="" coords="193,731,363,804"/>
+<area shape="rect" id="node5" href="$class_equipment.html" title=" " alt="" coords="168,449,387,669"/>
+<area shape="rect" id="node6" title="STL class." alt="" coords="157,221,236,295"/>
+<area shape="rect" id="node7" title="STL class." alt="" coords="134,5,259,92"/>
+<area shape="rect" id="node8" href="$class_money.html" title=" " alt="" coords="260,141,432,375"/>
+</map>

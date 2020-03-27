@@ -1,0 +1,10 @@
+<map id="Party" name="Party">
+<area shape="rect" id="node1" title=" " alt="" coords="95,1335,220,1461"/>
+<area shape="rect" id="node2" title=" " alt="" coords="75,1200,240,1273"/>
+<area shape="rect" id="node3" href="$class_character.html" title=" " alt="" coords="64,879,251,1139"/>
+<area shape="rect" id="node4" title=" " alt="" coords="73,744,242,817"/>
+<area shape="rect" id="node5" href="$class_equipment.html" title=" " alt="" coords="48,449,267,669"/>
+<area shape="rect" id="node6" title="STL class." alt="" coords="28,221,108,295"/>
+<area shape="rect" id="node7" title="STL class." alt="" coords="5,5,131,92"/>
+<area shape="rect" id="node8" href="$class_money.html" title=" " alt="" coords="140,141,311,375"/>
+</map>
