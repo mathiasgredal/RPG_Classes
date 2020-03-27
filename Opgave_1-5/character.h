@@ -20,7 +20,7 @@ class Character {
 private:
     std::string m_name;
     boost::uuids::uuid m_uuid;
-    Money m_moneyBalance;
+    Money m_moneyBalance = Money(0);
     float m_maxLoad;
     std::vector<Equipment> m_equipment;
 

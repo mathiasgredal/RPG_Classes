@@ -1,6 +1,6 @@
 #include "character.h"
 
-Character::Character(std::string name, float moneyBalance, float maxLoad, std::vector<Equipment> equipment, boost::uuids::uuid uuid)
+Character::Character(std::string name, Money moneyBalance, float maxLoad, std::vector<Equipment> equipment, boost::uuids::uuid uuid)
 {
     boost::trim(name);
 
@@ -41,7 +41,7 @@ boost::uuids::uuid Character::uuid() const
     return m_uuid;
 }
 
-float Character::moneyBalance() const
+Money Character::moneyBalance() const
 {
     return m_moneyBalance;
 }
@@ -65,7 +65,7 @@ float Character::currentLoad() const
     return load;
 }
 
-void Character::addMoneyToBalance(float money)
+void Character::addMoneyToBalance(Money money)
 {
     m_moneyBalance += money;
 }
@@ -75,7 +75,7 @@ bool afford(const Character& character, Money money)
     return (character.moneyBalance().getBronzePieces() - money.getBronzePieces() >= 0);
 }
 
-void Character::takeMoneyFromBalance(float money)
+void Character::takeMoneyFromBalance(Money money)
 {
     if (afford(*this, money))
         m_moneyBalance -= money;

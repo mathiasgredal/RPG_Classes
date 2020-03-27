@@ -4,6 +4,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <math.h>
+#include <sstream>
 #include <string>
 
 class Money {
@@ -27,12 +28,17 @@ public:
     void subtractBronzePieces(long bronzePieces);
     void subtractSilverPieces(double silverPieces);
     void subtractGoldPieces(double goldPieces);
-
-    friend Money operator+(const Money& lhs, const Money& rhs);
-    friend Money operator-(const Money& lhs, const Money& rhs);
-
-    friend Money operator+=(const Money& lhs, const Money& rhs);
-    friend Money operator-=(const Money& lhs, const Money& rhs);
+    std::string toString() const;
 };
+
+Money operator+(const Money& lhs, const Money& rhs);
+Money operator-(const Money& lhs, const Money& rhs);
+
+Money operator+=(const Money& lhs, const Money& rhs);
+Money operator-=(const Money& lhs, const Money& rhs);
+
+std::ostream& operator<<(std::ostream& os, const Money& obj);
+
+bool operator==(const Money& lhs, const Money& rhs);
 
 #endif // MONEY_H

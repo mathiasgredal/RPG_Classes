@@ -92,29 +92,51 @@ void Money::subtractGoldPieces(double goldPieces)
     m_bronzePieces -= fromGold(goldPieces);
 }
 
-Money Money::operator+(const Money& lhs, const Money& rhs)
+Money operator+(const Money& lhs, const Money& rhs)
 {
     return Money(lhs.getBronzePieces() + rhs.getBronzePieces());
 }
 
-Money Money::operator-(const Money& lhs, const Money& rhs)
+Money operator-(const Money& lhs, const Money& rhs)
 {
     return Money(lhs.getBronzePieces() - rhs.getBronzePieces());
 }
 
-Money Money::operator+=(const Money& lhs, const Money& rhs)
+Money operator+=(const Money& lhs, const Money& rhs)
 {
+    return Money(lhs.getBronzePieces() + rhs.getBronzePieces());
 }
 
-Money Money::operator-=(const Money& lhs, const Money& rhs)
+Money operator-=(const Money& lhs, const Money& rhs)
 {
+    return Money(lhs.getBronzePieces() + rhs.getBronzePieces());
 }
 
-void Money::print()
+std::string Money::toString() const
 {
+    std::ostringstream oss;
+
     long gold = floor(m_bronzePieces / 10000.);
     long silver = floor((m_bronzePieces % 10000) / 100.);
     long bronze = m_bronzePieces - gold * 10000 - silver * 100;
 
-    std::cout << gold << "gp " << silver << "sp " << bronze << "cp" << std::endl;
+    oss << gold << "gp " << silver << "sp " << bronze << "cp";
+
+    return oss.str();
+}
+
+void Money::print()
+{
+    std::cout << toString() << std::endl;
+}
+
+std::ostream& operator<<(std::ostream& os, const Money& obj)
+{
+    os << obj.toString();
+    return os;
+}
+
+bool operator==(const Money& lhs, const Money& rhs)
+{
+    return (lhs.getBronzePieces() == rhs.getBronzePieces());
 }
