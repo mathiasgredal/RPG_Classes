@@ -1,7 +1,7 @@
 #ifndef EQUIPMENT_H
 #define EQUIPMENT_H
 
-#include "../Opgave_5/money.h"
+#include "money.h"
 #include <boost/algorithm/string.hpp>
 #include <iostream>
 #include <string>
@@ -16,17 +16,17 @@ enum EquipmentType { Weapon,
 class Equipment {
 private:
     std::string m_name;
-    Money m_price;
+    Money m_price = Money(0);
     EquipmentType m_type;
     float m_weight;
     std::string m_description;
     bool m_ready;
 
 public:
-    Equipment(std::string name, float price, EquipmentType type, float weight, std::string description, bool ready);
+    Equipment(std::string name, Money price, EquipmentType type, float weight, std::string description, bool ready);
 
     std::string getName() const;
-    float getPrice() const;
+    Money getPrice() const;
     EquipmentType getType() const;
     std::string getTypeString() const;
 

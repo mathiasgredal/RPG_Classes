@@ -103,3 +103,7 @@ Her ses et klassediagram over Character klassen, som er den grå boks i bunden. 
 ##### Shop
 
 ![](class_shop_graph.png)
+
+### 2020/03/27
+
+I dag nået jeg ikke så meget, da jeg har lavet mange af skal opgaverne og der var kun udvidelse af klasserne eller et textadventure tilbage. Jeg startede med textadventure opgaven og startede med at overveje hvordan jeg ville starte på opgaven, men jeg besluttede bare at fortsætte med at udvide de andre klasser i stedet hvor jeg gik igang med at lave CMake filerne om så jeg kunne bruge moneyklassen i de andre klasser. Efter jeg havde gjort det gik jeg igang med operator overloading så jeg nemt kunne addere 2 money objekter, dog blev jeg ikke helt færdig med det.
